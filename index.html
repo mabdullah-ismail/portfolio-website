@@ -38,9 +38,7 @@
                 <div class="col-lg-8">
                     <h1 class="glitchText">Muhammad Abdullah Ismail</h1>
                     <p class="lead">Welcome to Night City's finest game development portfolio</p>
-                    <div class="typingBox mb-4">
-                        <span id="typing-text">Creating immersive digital experiences...</span>
-                    </div>
+                    <p class="mb-4">Creating immersive digital experiences...</p>
                     <div class="d-flex gap-3 flex-wrap">
                         <a href="#projects" class="cyberButton">View Projects</a>
                         <a href="https://drive.google.com/file/d/1E-miJHFWBcPVqaRQoJVqPZNY4ndYWEj2/view?usp=sharing" class="cyberButton" target="_blank">Download CV</a>
@@ -154,35 +152,87 @@
                     <div class="infoCard">
                         <div class="mb-4">
                             <h4 class="skillCategory">Core Technologies</h4>
-                            <div class="mt-3">
-                                <span class="skillTag">Unity 3D</span>
-                                <span class="skillTag">C#</span>
-                                <span class="skillTag">JavaScript</span>
-                                <span class="skillTag">Git</span>
-                                <span class="skillTag">C++</span>
-                                <span class="skillTag">Photoshop</span>
+                            <div class="cyber-skills-container mt-3">
+                                <div class="cyber-skill">
+                                    <div class="skill-name">Unity 3D</div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar" data-level="95"></div>
+                                    </div>
+                                    <div class="skill-percentage">95%</div>
+                                </div>
+                                <div class="cyber-skill">
+                                    <div class="skill-name">C#</div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar" data-level="90"></div>
+                                    </div>
+                                    <div class="skill-percentage">90%</div>
+                                </div>
+                                <div class="cyber-skill">
+                                    <div class="skill-name">JavaScript</div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar" data-level="75"></div>
+                                    </div>
+                                    <div class="skill-percentage">75%</div>
+                                </div>
+                                <div class="cyber-skill">
+                                    <div class="skill-name">C++</div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar" data-level="80"></div>
+                                    </div>
+                                    <div class="skill-percentage">80%</div>
+                                </div>
                             </div>
                         </div>
                         <div class="mb-4">
                             <h4 class="skillCategory">Game Development</h4>
-                            <div class="mt-3">
-                                <span class="skillTag">Gameplay Programming</span>
-                                <span class="skillTag">UI/UX Design</span>
-                                <span class="skillTag">Shader Programming</span>
-                                <span class="skillTag">Animation Systems</span>
-                                <span class="skillTag">Physics</span>
-                                <span class="skillTag">Audio Integration</span>
+                            <div class="cyber-skills-container mt-3">
+                                <div class="cyber-skill">
+                                    <div class="skill-name">Gameplay Programming</div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar" data-level="92"></div>
+                                    </div>
+                                    <div class="skill-percentage">92%</div>
+                                </div>
+                                <div class="cyber-skill">
+                                    <div class="skill-name">UI/UX Design</div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar" data-level="85"></div>
+                                    </div>
+                                    <div class="skill-percentage">85%</div>
+                                </div>
+                                <div class="cyber-skill">
+                                    <div class="skill-name">Shader Programming</div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar" data-level="70"></div>
+                                    </div>
+                                    <div class="skill-percentage">70%</div>
+                                </div>
                             </div>
                         </div>
                         <div>
                             <h4 class="skillCategory">Emerging Tech</h4>
-                            <div class="mt-3">
-                                <span class="skillTag">VR/AR</span>
-                                <span class="skillTag">ML-Agents</span>
-                                <span class="skillTag">Addressables</span>
-                                <span class="skillTag">Universal RP</span>
-                                <span class="skillTag">Multiplayer</span>
-                                <span class="skillTag">Cloud Build</span>
+                            <div class="cyber-skills-container mt-3">
+                                <div class="cyber-skill">
+                                    <div class="skill-name">VR/AR</div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar" data-level="75"></div>
+                                    </div>
+                                    <div class="skill-percentage">75%</div>
+                                </div>
+                                <div class="cyber-skill">
+                                    <div class="skill-name">ML-Agents</div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar" data-level="65"></div>
+                                    </div>
+                                    <div class="skill-percentage">65%</div>
+                                </div>
+                                <div class="cyber-skill">
+                                    <div class="skill-name">Multiplayer</div>
+                                    <div class="skill-bar-container">
+                                        <div class="skill-bar" data-level="80"></div>
+                                    </div>
+                                    <div class="skill-percentage">80%</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -239,31 +289,37 @@
     <footer class="siteFooter text-center">
         <div class="container">
             <p>&copy; 2025 Game Developer Portfolio. Powered by g3n0x1d3.</p>
+            <p><a href="#" id="easter-egg-trigger" class="easter-egg-link">Find the hidden game <i class="fas fa-gamepad"></i></a></p>
+        </div>
+        
+        <!-- Mini-Game Easter Egg -->
+        <div id="mini-game" class="mini-game-container">
+            <div class="game-header">
+                <h3>CYBER RUNNER</h3>
+                <div class="game-score">SCORE: <span id="game-score">0</span></div>
+                <button id="close-game" class="close-game-btn">X</button>
+            </div>
+            <div id="game-area" class="game-area">
+                    <div id="player" class="game-player"></div>
+                    <div class="game-over-message">GAME OVER</div>
+                </div>
+            <div class="game-controls">
+                <button id="start-game" class="cyber-game-btn">START</button>
+                <button id="control-left" class="control-btn">◀</button>
+                <button id="control-right" class="control-btn">▶</button>
+                <div class="game-instructions">
+                        <p>Use LEFT/RIGHT arrows or A/D keys to move</p>
+                        <p>On mobile: Use touch controls or swipe</p>
+                        <p>Avoid obstacles and survive as long as possible</p>
+                    </div>
+            </div>
         </div>
     </footer>
 
+
+    
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const navbarToggler = document.querySelector('.navbar-toggler');
-            const navbarCollapse = document.querySelector('.navbar-collapse');
-            
-            if (navbarToggler && navbarCollapse) {
-                navbarToggler.addEventListener('click', function() {
-                    navbarCollapse.classList.toggle('show');
-                });
-                
-                const navLinks = document.querySelectorAll('.nav-link');
-                navLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        navbarCollapse.classList.remove('show');
-                    });
-                });
-            }
-        });
-		
-		
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
