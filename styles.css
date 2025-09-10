@@ -24,6 +24,23 @@ body {
     background: var(--yellow);
     color: var(--primaryText);
     overflow-x: hidden;
+    background-image: url('https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 100%);
+    z-index: -1;
 }
 
 /* Custom Scrollbar */
@@ -108,22 +125,7 @@ body {
     font-weight: 500;
 }
 
-/* Typing Animation Box */
-.typingBox {
-    background: var(--dark);
-    color: var(--yellow);
-    padding: 15px 20px;
-    border-left: 5px solid var(--blue);
-    font-family: 'Orbitron', monospace;
-    font-weight: 600;
-    margin: 2rem 0;
-}
 
-.typingBox::before {
-    content: '>';
-    color: var(--blue);
-    margin-right: 10px;
-}
 
 /* Buttons */
 .cyberButton {
@@ -137,12 +139,61 @@ body {
     font-family: 'Orbitron', monospace;
     transition: all 0.3s ease;
     text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
 .cyberButton:hover {
     background: var(--dark);
     color: var(--yellow);
     text-decoration: none;
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px var(--blue), 0 0 30px rgba(0, 240, 255, 0.5);
+    text-shadow: 0 0 5px var(--yellow), 0 0 10px var(--blue);
+    animation: neon-pulse 1.5s infinite alternate;
+}
+
+@keyframes neon-pulse {
+    0% {
+        box-shadow: 0 0 15px var(--blue), 0 0 30px rgba(0, 240, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 20px var(--blue), 0 0 40px rgba(0, 240, 255, 0.7), 0 0 60px rgba(0, 240, 255, 0.4);
+    }
+}
+
+@keyframes glitch-effect {
+    0% {
+        transform: translate(0);
+        opacity: 1;
+    }
+    20% {
+        transform: translate(-5px, 5px);
+        opacity: 0.9;
+        text-shadow: -2px 0 #ff00de, 2px 2px #00ff9d;
+        clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    }
+    40% {
+        transform: translate(5px, -5px);
+        opacity: 0.8;
+        text-shadow: 2px 0 #ff00de, -2px -2px #00ff9d;
+        clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+    }
+    60% {
+        transform: translate(-5px, 5px);
+        opacity: 0.9;
+        text-shadow: -2px 0 #00ff9d, 2px 2px #ff00de;
+    }
+    80% {
+        transform: translate(5px, -5px);
+        opacity: 0.8;
+        text-shadow: 2px 0 #00ff9d, -2px -2px #ff00de;
+    }
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
 }
 
 /* Profile Image */
@@ -441,24 +492,93 @@ body {
     margin-bottom: 1rem;
 }
 
-.skillTag {
-    background: transparent;
-    border: 2px solid var(--yellow);
-    color: var(--yellow);
-    padding: 12px 25px;
-    margin: 8px;
-    display: inline-block;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
+/* Cyberpunk Skill Bars */
+.cyber-skills-container {
+    margin-top: 20px;
 }
 
-.skillTag:hover {
-    background: var(--yellow);
-    color: var(--dark);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(252, 238, 10, 0.4);
+.cyber-skill {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.skill-name {
+    width: 120px;
+    color: var(--yellow);
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.skill-bar-container {
+    flex: 1;
+    height: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--blue);
+    position: relative;
+    overflow: hidden;
+    margin: 0 10px;
+}
+
+.skill-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--blue) 0%, var(--yellow) 100%);
+    position: relative;
+    width: 0;
+    transition: width 1.5s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    box-shadow: 0 0 8px var(--blue), 0 0 15px rgba(0, 195, 255, 0.5);
+}
+
+.skill-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255, 255, 255, 0.1) 10px,
+        rgba(255, 255, 255, 0.1) 20px
+    );
+}
+
+.skill-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        transparent 100%
+    );
+    animation: skill-shine 3s infinite;
+}
+
+@keyframes skill-shine {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.skill-percentage {
+    width: 40px;
+    text-align: right;
+    color: var(--yellow);
+    font-weight: bold;
+    font-size: 0.9rem;
 }
 
 /* Footer */
@@ -492,6 +612,239 @@ body {
     }
 }
 
+/* Cursor Trail Effect */
+.cursor-trail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.trail-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--yellow);
+    border-radius: 50%;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    box-shadow: 0 0 8px var(--yellow), 0 0 12px var(--blue);
+    transition: transform 0.05s linear;
+}
+
+
+
+/* Neon Glow Effect */
+.neon-glow {
+    box-shadow: 0 0 15px var(--blue), 0 0 30px rgba(0, 195, 255, 0.5) !important;
+    text-shadow: 0 0 5px var(--light), 0 0 10px var(--blue) !important;
+    transition: all 0.2s ease !important;
+    transform: scale(1.05) !important;
+}
+
+.projectCard.neon-glow, .infoCard.neon-glow {
+    border-color: var(--blue) !important;
+}
+
+.contactLink.neon-glow {
+    color: var(--light) !important;
+}
+
+/* Mini-Game Easter Egg */
+.easter-egg-link {
+    color: var(--blue);
+    font-size: 0.9rem;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.easter-egg-link:hover {
+    color: var(--yellow);
+    opacity: 1;
+    text-shadow: 0 0 5px var(--blue), 0 0 10px var(--yellow);
+}
+
+.mini-game-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 90%;
+    max-width: 500px;
+    height: 400px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid var(--blue);
+    box-shadow: 0 0 20px var(--blue), 0 0 40px rgba(0, 195, 255, 0.5);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    overflow: hidden;
+}
+
+.mini-game-container.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: linear-gradient(90deg, var(--dark-blue) 0%, var(--blue) 100%);
+    color: var(--yellow);
+    border-bottom: 2px solid var(--blue);
+}
+
+.game-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px var(--blue), 0 0 10px rgba(0, 195, 255, 0.5);
+    letter-spacing: 2px;
+}
+
+.game-score {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.close-game-btn {
+    background: none;
+    border: none;
+    color: var(--yellow);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0 5px;
+    transition: all 0.3s ease;
+}
+
+.close-game-btn:hover {
+    color: var(--light);
+    text-shadow: 0 0 5px var(--blue), 0 0 10px rgba(0, 195, 255, 0.5);
+}
+
+.game-area {
+    flex: 1;
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+    border-bottom: 2px solid var(--blue);
+}
+
+#game-area.glitch {
+    animation: glitch-effect 0.5s forwards;
+}
+
+.game-over-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff00de;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px #ff00de;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.game-over-message.visible {
+    opacity: 1;
+    animation: glitch-effect 1s infinite;
+}
+
+.game-player {
+    width: 30px;
+    height: 30px;
+    background: var(--yellow);
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--yellow), 0 0 20px rgba(252, 238, 10, 0.5);
+}
+
+.game-obstacle {
+    position: absolute;
+    background: var(--blue);
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 0 10px var(--blue), 0 0 20px rgba(0, 195, 255, 0.5);
+}
+
+.game-controls {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cyber-game-btn {
+    background: linear-gradient(90deg, var(--dark) 0%, var(--dark-blue) 100%);
+    color: var(--yellow);
+    border: 2px solid var(--blue);
+    padding: 8px 25px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.cyber-game-btn:hover {
+    color: var(--light);
+    box-shadow: 0 0 15px var(--blue), 0 0 30px rgba(0, 195, 255, 0.5);
+    text-shadow: 0 0 5px var(--light), 0 0 10px var(--blue);
+}
+
+.control-btn {
+    background: rgba(0, 0, 0, 0.7);
+    color: #ff00ff;
+    border: 1px solid #ff00ff;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 0 8px #ff00ff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.control-btn:hover, .control-btn:active {
+    background: rgba(255, 0, 255, 0.2);
+    box-shadow: 0 0 15px #ff00ff, inset 0 0 10px #ff00ff;
+    transform: scale(1.1);
+}
+
+.game-instructions {
+    font-size: 0.8rem;
+    color: var(--light);
+    text-align: center;
+}
+
+.game-instructions p {
+    margin: 5px 0;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .heroSection h1 { 
@@ -512,6 +865,9 @@ body {
     .infoCard:hover, .projectCard:hover {
         transform: translateY(-5px) scale(1.01);
     }
-	
-	
+    
+    .mini-game-container {
+        width: 95%;
+        height: 350px;
+    }
 }
