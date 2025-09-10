@@ -1,26 +1,21 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Dev Portfolio - Night City Edition</title>
     
-   
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-	
-	<link rel="icon" type="image/png" href="favicon.png">
-
     <link rel="icon" type="image/png" href="favicon.png">
-    
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-   
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand glitch" href="#">&lt;/GENO&gt;</a>
+            <a class="navbar-brand glitchText" href="#">&lt;/GENO&gt;</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -36,56 +31,56 @@
         </div>
     </nav>
 
-   
-    <section id="home" class="hero">
+    <!-- Hero Section -->
+    <section id="home" class="heroSection">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-8">
-                    <h1 class="glitch">Muhammad Abdullah Ismail</h1>
+                    <h1 class="glitchText">Muhammad Abdullah Ismail</h1>
                     <p class="lead">Welcome to Night City's finest game development portfolio</p>
-                    <div class="typing-animation mb-4">
+                    <div class="typingBox mb-4">
                         <span id="typing-text">Creating immersive digital experiences...</span>
                     </div>
                     <div class="d-flex gap-3 flex-wrap">
-                        <a href="#projects" class="btn btn-cyber">View Projects</a>
-                        <a href="https://drive.google.com/file/d/1E-miJHFWBcPVqaRQoJVqPZNY4ndYWEj2/view?usp=sharing" class="btn btn-cyber" download>Download CV</a>
+                        <a href="#projects" class="cyberButton">View Projects</a>
+                        <a href="https://drive.google.com/file/d/1E-miJHFWBcPVqaRQoJVqPZNY4ndYWEj2/view?usp=sharing" class="cyberButton" target="_blank">Download CV</a>
                     </div>
                 </div>
                 <div class="col-lg-4 text-center">
-    <div class="profile-image-container">
-        <img src="image.jpg" alt="Muhammad Abdullah Ismail" class="profile-image">
-        <div class="image-overlay">
-            <h4>Unity Game Developer</h4>
-            <p>Crafting next-gen gaming experiences</p>
-        </div>
-    </div>
-</div>
+                    <div class="profileContainer">
+                        <img src="image.jpg" alt="Muhammad Abdullah Ismail" class="profileImage">
+                        <div class="imageOverlay">
+                            <h4>Unity Game Developer</h4>
+                            <p>Crafting next-gen gaming experiences</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-   
-    <section id="about">
+    <!-- About Section -->
+    <section id="about" class="darkSection">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="section-title glitch">SYSTEM.ABOUT</h2>
+                    <h2 class="sectionTitle glitchText">SYSTEM.ABOUT</h2>
                 </div>
                 <div class="col-lg-6">
-                    <div class="cyber-card h-100">
-                        <h3 style="color: var(--cp-blue);">Background Process</h3>
+                    <div class="infoCard h-100">
+                        <h3 class="cardTitle">Background Process</h3>
                         <p>Unity Game Developer Intern with a passion for creating immersive digital worlds. Currently debugging reality and coding dreams into playable experiences.</p>
                         <p>Specializing in gameplay mechanics, UI/UX design, and performance optimization. Always ready to dive into new technologies and push the boundaries of interactive entertainment.</p>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="cyber-card h-100">
-                        <h3 style="color: var(--cp-blue);">Current Stats</h3>
+                    <div class="infoCard h-100">
+                        <h3 class="cardTitle">Current Stats</h3>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-code me-2" style="color: var(--cp-yellow);"></i> Unity Intern @ [OZI Pub]</li>
-                            <li class="mb-2"><i class="fas fa-gamepad me-2" style="color: var(--cp-blue);"></i> Game Development Student</li>
-                            <li class="mb-2"><i class="fas fa-trophy me-2" style="color: var(--cp-yellow);"></i> Multiple Projects Shipped</li>
-                            <li class="mb-2"><i class="fas fa-brain me-2" style="color: var(--cp-blue);"></i> Always Learning</li>
+                            <li class="mb-2"><i class="fas fa-code me-2 yellowIcon"></i> Unity Intern @ [OZI Pub]</li>
+                            <li class="mb-2"><i class="fas fa-gamepad me-2 blueIcon"></i> Game Development Student</li>
+                            <li class="mb-2"><i class="fas fa-trophy me-2 yellowIcon"></i> Multiple Projects Shipped</li>
+                            <li class="mb-2"><i class="fas fa-brain me-2 blueIcon"></i> Always Learning</li>
                         </ul>
                     </div>
                 </div>
@@ -93,102 +88,101 @@
         </div>
     </section>
 
-    
-    <section id="projects">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="section-title glitch">PROJECT.FILES</h2>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card project-card">
-                        <div class="project-image">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <div class="card-body">
-                            <h4 style="color: var(--cp-yellow);">Arcade Hub</h4>
-                            <p>A console based hub with multiple games to experience! </p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small style="color: var(--cp-blue);">C++</small>
-                               
-                            </div>
+    <!-- Projects Section -->
+<section id="projects" class="lightSection">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="sectionTitle glitchText">PROJECT.FILES</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 mb-4 d-flex">
+                <div class="projectCard h-100 w-100">
+                    <div class="projectImage">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="projectInfo">
+                        <h4 class="projectTitle">Arcade Hub</h4>
+                        <p>A console based hub with multiple games to experience!</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="techStack">C++</small>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card project-card">
-                        <div class="project-image">
-                            <i class="fas fa-ghost"></i>
-                        </div>
-                        <div class="card-body">
-                            <h4 style="color: var(--cp-yellow);">Flappy Bird</h4>
-                            <p>Flappy bird the classic!</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small style="color: var(--cp-blue);">C# & Unity</small>
-                                
-                            </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4 d-flex">
+                <div class="projectCard h-100 w-100">
+                    <div class="projectImage">
+                        <i class="fas fa-ghost"></i>
+                    </div>
+                    <div class="projectInfo">
+                        <h4 class="projectTitle">Flappy Bird</h4>
+                        <p>Flappy bird the classic!</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="techStack">C# & Unity</small>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card project-card">
-                        <div class="project-image">
-                            <i class="fas fa-puzzle-piece"></i>
-                        </div>
-                        <div class="card-body">
-                            <h4 style="color: var(--cp-yellow);">Vehicle Driving Simulator</h4>
-                            <p>An open world car simulator with multiple cars side quests and much more!</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small style="color: var(--cp-blue);">C# & Unity</small>
-                              
-                            </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4 d-flex">
+                <div class="projectCard h-100 w-100">
+                    <div class="projectImage">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <div class="projectInfo">
+                        <h4 class="projectTitle">Vehicle Driving Simulator</h4>
+                        <p>An open world car simulator with multiple cars side quests and much more!</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="techStack">C# & Unity</small>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    
-    <section id="skills">
+    <!-- Skills Section -->
+    <section id="skills" class="darkSection">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="section-title glitch">SKILL.TREE</h2>
+                    <h2 class="sectionTitle glitchText">SKILL.TREE</h2>
                 </div>
                 <div class="col-12 text-center">
-                    <div class="cyber-card">
+                    <div class="infoCard">
                         <div class="mb-4">
-                            <h4 style="color: var(--cp-yellow);">Core Technologies</h4>
+                            <h4 class="skillCategory">Core Technologies</h4>
                             <div class="mt-3">
-                                <span class="skill-item">Unity 3D</span>
-                                <span class="skill-item">C#</span>
-                                <span class="skill-item">JavaScript</span>
-                                <span class="skill-item">Git</span>
-                                <span class="skill-item">C++</span>
-                                <span class="skill-item">Photoshop</span>
+                                <span class="skillTag">Unity 3D</span>
+                                <span class="skillTag">C#</span>
+                                <span class="skillTag">JavaScript</span>
+                                <span class="skillTag">Git</span>
+                                <span class="skillTag">C++</span>
+                                <span class="skillTag">Photoshop</span>
                             </div>
                         </div>
                         <div class="mb-4">
-                            <h4 style="color: var(--cp-yellow);">Game Development</h4>
+                            <h4 class="skillCategory">Game Development</h4>
                             <div class="mt-3">
-                                <span class="skill-item">Gameplay Programming</span>
-                                <span class="skill-item">UI/UX Design</span>
-                                <span class="skill-item">Shader Programming</span>
-                                <span class="skill-item">Animation Systems</span>
-                                <span class="skill-item">Physics</span>
-                                <span class="skill-item">Audio Integration</span>
+                                <span class="skillTag">Gameplay Programming</span>
+                                <span class="skillTag">UI/UX Design</span>
+                                <span class="skillTag">Shader Programming</span>
+                                <span class="skillTag">Animation Systems</span>
+                                <span class="skillTag">Physics</span>
+                                <span class="skillTag">Audio Integration</span>
                             </div>
                         </div>
                         <div>
-                            <h4 style="color: var(--cp-yellow);">Emerging Tech</h4>
+                            <h4 class="skillCategory">Emerging Tech</h4>
                             <div class="mt-3">
-                                <span class="skill-item">VR/AR</span>
-                                <span class="skill-item">ML-Agents</span>
-                                <span class="skill-item">Addressables</span>
-                                <span class="skill-item">Universal RP</span>
-                                <span class="skill-item">Multiplayer</span>
-                                <span class="skill-item">Cloud Build</span>
+                                <span class="skillTag">VR/AR</span>
+                                <span class="skillTag">ML-Agents</span>
+                                <span class="skillTag">Addressables</span>
+                                <span class="skillTag">Universal RP</span>
+                                <span class="skillTag">Multiplayer</span>
+                                <span class="skillTag">Cloud Build</span>
                             </div>
                         </div>
                     </div>
@@ -197,38 +191,38 @@
         </div>
     </section>
 
-    
-    <section id="contact">
+    <!-- Contact Section -->
+    <section id="contact" class="lightSection">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="section-title glitch">CONTACT.EXE</h2>
+                    <h2 class="sectionTitle glitchText">CONTACT.EXE</h2>
                 </div>
                 <div class="col-lg-8 mx-auto">
-                    <div class="cyber-card text-center">
-                        <h4 style="color: var(--cp-yellow);">Initialize Connection</h4>
+                    <div class="infoCard text-center">
+                        <h4 class="cardTitle">Initialize Connection</h4>
                         <p class="mb-4">Ready to jack into your next project? Let's connect and build something amazing together.</p>
                         <div class="row">
                             <div class="col-md-4 mb-3">
-                                <div class="cyber-card">
-                                    <i class="fas fa-envelope fa-2x mb-2" style="color: var(--cp-yellow);"></i>
+                                <div class="contactCard">
+                                    <i class="fas fa-envelope fa-2x mb-2 yellowIcon"></i>
                                     <h6>Email</h6>
                                     <small>abdullahismail249@yahoo.com</small>
                                 </div>
                             </div>
                             <div class="col-md-4 mb-3">
-                                <a href="https://linkedin.com/in/muhammad-abdullah-ismail" target="_blank" class="contact-link">
-                                    <div class="cyber-card clickable-card">
-                                        <i class="fab fa-linkedin fa-2x mb-2" style="color: var(--cp-blue);"></i>
+                                <a href="https://linkedin.com/in/muhammad-abdullah-ismail" target="_blank" class="contactLink">
+                                    <div class="contactCard hoverable">
+                                        <i class="fab fa-linkedin fa-2x mb-2 blueIcon"></i>
                                         <h6>LinkedIn</h6>
                                         <small>@muhammad-abdullah-ismail</small>
                                     </div>
                                 </a>
                             </div>
                             <div class="col-md-4 mb-3">
-                                <a href="https://github.com/mabdullah-ismail" target="_blank" class="contact-link">
-                                    <div class="cyber-card clickable-card">
-                                        <i class="fab fa-github fa-2x mb-2" style="color: var(--cp-red);"></i>
+                                <a href="https://github.com/mabdullah-ismail" target="_blank" class="contactLink">
+                                    <div class="contactCard hoverable">
+                                        <i class="fab fa-github fa-2x mb-2 redIcon"></i>
                                         <h6>GitHub</h6>
                                         <small>@mabdullah-ismail</small>
                                     </div>
@@ -241,44 +235,35 @@
         </div>
     </section>
 
-   
-    <footer class="footer text-center">
+    <!-- Footer -->
+    <footer class="siteFooter text-center">
         <div class="container">
             <p>&copy; 2025 Game Developer Portfolio. Powered by g3n0x1d3.</p>
         </div>
     </footer>
 
-	<script>
-// Initialize Bootstrap navbar toggle functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Get the navbar toggler and collapse elements
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-    
-    if (navbarToggler && navbarCollapse) {
-        navbarToggler.addEventListener('click', function() {
-            navbarCollapse.classList.toggle('show');
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            
+            if (navbarToggler && navbarCollapse) {
+                navbarToggler.addEventListener('click', function() {
+                    navbarCollapse.classList.toggle('show');
+                });
+                
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        navbarCollapse.classList.remove('show');
+                    });
+                });
+            }
         });
-        
-        // Close menu when clicking on nav links (mobile)
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                navbarCollapse.classList.remove('show');
-            });
-        });
-    }
-});
-</script>
-
-    
-   
+		
+		
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
