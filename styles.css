@@ -742,7 +742,7 @@ body::before {
 .game-over-message {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 15%;
     transform: translate(-50%, -50%);
     color: #ff00de;
     font-family: 'Orbitron', sans-serif;
@@ -754,6 +754,8 @@ body::before {
     transition: opacity 0.5s;
     pointer-events: none;
     z-index: 10;
+    width: 80%;
+    text-align: center;
 }
 
 .game-over-message.visible {
@@ -868,6 +870,21 @@ body::before {
     
     .mini-game-container {
         width: 95%;
-        height: 350px;
+        height: 450px;
+        max-width: 95vw;
+    }
+    
+    .game-area {
+        height: 300px;
+    }
+    
+    .game-player {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .game-obstacle {
+        width: 25px;
+        height: 25px;
     }
 }
