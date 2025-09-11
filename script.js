@@ -28,67 +28,75 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Cursor trail effect
-    const cursorTrail = document.createElement('div');
-    cursorTrail.className = 'cursor-trail';
-    document.body.appendChild(cursorTrail);
-    
-    const trail = [];
-    const trailLength = 20;
-    
-    for (let i = 0; i < trailLength; i++) {
-        const dot = document.createElement('div');
-        dot.className = 'trail-dot';
-        cursorTrail.appendChild(dot);
-        trail.push({
-            element: dot,
-            x: 0,
-            y: 0,
-            delay: i * 2
-        });
+    // Function to detect Android devices
+    function isAndroid() {
+        return /Android/i.test(navigator.userAgent);
     }
     
-    let mouseX = 0;
-    let mouseY = 0;
-    
-    document.addEventListener('mousemove', function(e) {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    });
-    
-    function animate() {
-        let x = mouseX;
-        let y = mouseY;
+    // Only create cursor trail if not on Android
+    if (!isAndroid()) {
+        // Cursor trail effect
+        const cursorTrail = document.createElement('div');
+        cursorTrail.className = 'cursor-trail';
+        document.body.appendChild(cursorTrail);
         
-        trail.forEach((dot, index) => {
-            const nextDot = trail[index + 1] || trail[0];
-            
-            dot.x = x;
-            dot.y = y;
-            
-            dot.element.style.left = `${x}px`;
-            dot.element.style.top = `${y}px`;
-            dot.element.style.opacity = 1 - (index / trailLength);
-            dot.element.style.transform = `scale(${1 - (index / trailLength) * 0.5})`;
-            
-            // Add glitch effect randomly
-            if (Math.random() > 0.97) {
-                dot.element.style.left = `${x + (Math.random() * 10 - 5)}px`;
-                dot.element.style.top = `${y + (Math.random() * 10 - 5)}px`;
-                setTimeout(() => {
-                    dot.element.style.left = `${x}px`;
-                    dot.element.style.top = `${y}px`;
-                }, 50);
-            }
-            
-            x += (nextDot.x - dot.x) * 0.3;
-            y += (nextDot.y - dot.y) * 0.3;
+        const trail = [];
+        const trailLength = 20;
+        
+        for (let i = 0; i < trailLength; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'trail-dot';
+            cursorTrail.appendChild(dot);
+            trail.push({
+                element: dot,
+                x: 0,
+                y: 0,
+                delay: i * 2
+            });
+        }
+        
+        let mouseX = 0;
+        let mouseY = 0;
+        
+        document.addEventListener('mousemove', function(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
         });
         
-        requestAnimationFrame(animate);
+        function animate() {
+            let x = mouseX;
+            let y = mouseY;
+            
+            trail.forEach((dot, index) => {
+                const nextDot = trail[index + 1] || trail[0];
+                
+                dot.x = x;
+                dot.y = y;
+                
+                dot.element.style.left = `${x}px`;
+                dot.element.style.top = `${y}px`;
+                dot.element.style.opacity = 1 - (index / trailLength);
+                dot.element.style.transform = `scale(${1 - (index / trailLength) * 0.5})`;
+                
+                // Add glitch effect randomly
+                if (Math.random() > 0.97) {
+                    dot.element.style.left = `${x + (Math.random() * 10 - 5)}px`;
+                    dot.element.style.top = `${y + (Math.random() * 10 - 5)}px`;
+                    setTimeout(() => {
+                        dot.element.style.left = `${x}px`;
+                        dot.element.style.top = `${y}px`;
+                    }, 50);
+                }
+                
+                x += (nextDot.x - dot.x) * 0.3;
+                y += (nextDot.y - dot.y) * 0.3;
+            });
+            
+            requestAnimationFrame(animate);
+        }
+        
+        animate();
     }
-    
-    animate();
     
     // Initialize skill bars animation
     function initSkillBars() {
